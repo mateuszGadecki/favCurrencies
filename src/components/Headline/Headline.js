@@ -7,7 +7,7 @@ const headline = () => {
     <div className={classes.Headline}>
       <div className={classes.HeadWrapper}>
         <p className={classes.Head}>
-          Follow your favorite currencies to stay up to date
+          Obserwuj swoje ulubione waluty, aby być na bieżąco.
         </p>
       </div>
     </div>

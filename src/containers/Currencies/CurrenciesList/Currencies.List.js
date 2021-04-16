@@ -31,9 +31,8 @@ class CurrenciesList extends Component {
     return (
       <div className={classes.currenciesList}>
         <div className={classes.listTitles}>
-          <h2>Currency</h2>
-          <h2>Average</h2>
-          <h2>Add to favorites</h2>
+          <h2>Waluta</h2>
+          <h2 className={classes.center}>Kurs średni</h2>
         </div>
         {listContent}
       </div>

@@ -21,7 +21,10 @@ const initCurrenciesFail = (state, action) => {
 
 const setCurrencies = (state, action) => {
   const currencies = action.currencies.map((el) => {
-    const mid = (el.ask + el.bid) / 2;
+    const mid = (
+      Math.round(((el.ask + el.bid) / 2 + Number.EPSILON) * 100) / 100
+    ).toFixed(2);
+
     return {
       ...el,
       mid: mid,
