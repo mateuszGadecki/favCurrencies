@@ -23,7 +23,7 @@ export const initCurrenciesFail = (error) => {
 export const initCurrencies = () => {
   return (dispatch) => {
     dispatch(initCurrenciecStart());
-    fetch("http://api.nbp.pl/api/exchangerates/tables/a/?format=json")
+    fetch("http://api.nbp.pl/api/exchangerates/tables/c/?format=json")
       .then((res) => res.json())
       .then((res) => {
         dispatch(setCurrencies(res));

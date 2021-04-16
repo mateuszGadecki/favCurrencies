@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import classes from "./Currencies.module.css";
 import * as actions from "../../store/index";
+import CurrenciesList from "./CurrenciesList/Currencies.List";
+import FavCurrencies from "./FavCurrencies/FavCurrencies";
 
 class Currencies extends Component {
   componentDidMount() {
@@ -9,12 +12,10 @@ class Currencies extends Component {
   }
 
   render() {
-    if (this.props.currencies) {
-      console.log(this.props.currencies);
-    }
     return (
-      <div>
-        <div>currencies</div>
+      <div className={classes.Currencies}>
+        <CurrenciesList />
+        <FavCurrencies />
       </div>
     );
   }
