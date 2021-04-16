@@ -8,7 +8,7 @@
 .listTitles {
   display: grid;
   grid-template-columns: 45% 30% 25%;
-  margin: 0 auto 15px auto;
+  margin: 0 auto 20px auto;
 }
 
 .listTitles h2 {

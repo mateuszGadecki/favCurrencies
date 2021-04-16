@@ -8,7 +8,12 @@ const currenciesItem = (props) => {
       <li>{props.obj.currency}</li>
       <li>{props.obj.code}</li>
       <li className={classes.center}>{props.obj.mid}</li>
-      <button className={classes.followButton}>Obserwuj</button>
+      <button
+        onClick={() => props.addToFavorites(props.obj)}
+        className={classes.followButton}
+      >
+        Obserwuj
+      </button>
     </ul>
   );
 };

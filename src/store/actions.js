@@ -19,6 +19,12 @@ export const initCurrenciesFail = (error) => {
     error: error,
   };
 };
+export const addToFavorites = (favorites) => {
+  return {
+    type: actionTypes.ADD_TO_FAVORITES,
+    favorites: favorites,
+  };
+};
 
 export const initCurrencies = () => {
   return (dispatch) => {

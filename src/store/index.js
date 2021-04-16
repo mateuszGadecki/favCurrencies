@@ -1,1 +1,1 @@
-export { initCurrencies } from "./actions";
+export { initCurrencies, addToFavorites } from "./actions";

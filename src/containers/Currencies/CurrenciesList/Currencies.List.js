@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import * as actions from "../../../store/index";
 import Spinner from "../../../components/UI/Spinner/Spinner";
 import CurrenciesItem from "../../../components/CurrenciesItem/CurrenciesItem";
 import classes from "./CurrenciesList.module.css";
 
 class CurrenciesList extends Component {
-  state = {};
-
   render() {
     let listContent;
     if (this.props.loading) {
@@ -21,7 +20,13 @@ class CurrenciesList extends Component {
         listContent = (
           <div>
             {this.props.currencies.map((el) => {
-              return <CurrenciesItem key={el.code} obj={el} />;
+              return (
+                <CurrenciesItem
+                  key={el.code}
+                  obj={el}
+                  addToFavorites={this.props.onAddToFavorites}
+                />
+              );
             })}
           </div>
         );
@@ -47,4 +52,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(CurrenciesList);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onAddToFavorites: (item) => dispatch(actions.addToFavorites(item)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CurrenciesList);
