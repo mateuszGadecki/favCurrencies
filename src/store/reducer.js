@@ -20,9 +20,16 @@ const initCurrenciesFail = (state, action) => {
 };
 
 const setCurrencies = (state, action) => {
+  const currencies = action.currencies.map((el) => {
+    const mid = (el.ask + el.bid) / 2;
+    return {
+      ...el,
+      mid: mid,
+    };
+  });
   return {
     ...state,
-    currencies: action.currencies,
+    currencies: currencies,
     loading: false,
   };
 };

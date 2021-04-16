@@ -21,17 +21,10 @@ class Currencies extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    currencies: state.currencies,
-    loading: state.loading,
-  };
-};
-
 const mapDispatchToProps = (dispatch) => {
   return {
     onInitCurrencies: () => dispatch(actions.initCurrencies()),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Currencies);
+export default connect(null, mapDispatchToProps)(Currencies);

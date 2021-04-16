@@ -1,0 +1,21 @@
+.currenciesList {
+  padding: 50px 0;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.listTitles {
+  display: grid;
+  grid-template-columns: 40% 25% 35%;
+  margin: 0 auto;
+}
+
+.listTitles h2 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 2.1rem;
+  font-weight: 400;
+  color: #999;
+}

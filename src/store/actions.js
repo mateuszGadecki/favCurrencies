@@ -26,8 +26,7 @@ export const initCurrencies = () => {
     fetch("http://api.nbp.pl/api/exchangerates/tables/c/?format=json")
       .then((res) => res.json())
       .then((res) => {
-        dispatch(setCurrencies(res));
-        console.log(res);
+        dispatch(setCurrencies(res[0].rates));
       })
       .catch((error) => {
         dispatch(initCurrenciesFail(error));
