@@ -66,3 +66,22 @@
   background-color: #777;
   color: #eee;
 }
+
+@media (max-width: 768px) {
+  .popup {
+    width: 80%;
+    left: 10%;
+  }
+}
+@media (max-width: 425px) {
+  .popup {
+    width: 90%;
+    left: 5%;
+  }
+  .popupMessage {
+    font-size: 1.5rem;
+  }
+  .decisionButtons {
+    font-size: 1.4rem;
+  }
+}

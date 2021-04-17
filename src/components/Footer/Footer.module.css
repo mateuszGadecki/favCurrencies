@@ -21,3 +21,12 @@
   display: flex;
   justify-content: center;
 }
+
+@media (max-width: 425px) {
+  .rights {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.3rem;
+  }
+}
