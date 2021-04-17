@@ -1,0 +1,68 @@
+.popup {
+  position: fixed;
+  z-index: 500;
+  background-color: #f7f7f7;
+  width: 60%;
+  border: 1px solid #ccc;
+  box-shadow: #c4c4c4 0px 3px 8px;
+  border-radius: 20px;
+  padding: 16px;
+  left: 20%;
+  top: 30%;
+  box-sizing: border-box;
+  transition: all 0.3s ease-out;
+}
+
+.popupMessage {
+  line-height: 145%;
+  width: 95%;
+  margin: 10px auto;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.closeBtnWrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin: 5px;
+}
+
+.closePopupButton {
+  width: fit-content;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.6rem;
+  color: #d63031;
+  transition: all 0.3s;
+}
+
+.closePopupButton:hover,
+.closePopupButton:active {
+  transform: scale(1.1);
+  color: #941d1e;
+}
+
+.decisionContainer {
+  width: 80%;
+  margin: 15px auto;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.decisionButtons {
+  font-size: 1.7rem;
+  border: 1px solid #000;
+  padding: 3px 20px;
+  margin: 20px auto 0 auto;
+  width: fit-content;
+  cursor: pointer;
+  background: none;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.decisionButtons:hover {
+  background-color: #777;
+  color: #eee;
+}
