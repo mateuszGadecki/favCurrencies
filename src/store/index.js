@@ -4,4 +4,5 @@ export {
   deleteAll,
   removeCurrency,
   currentItem,
+  setFavCurrencies,
 } from "./actions";

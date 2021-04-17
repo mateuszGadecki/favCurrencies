@@ -12,6 +12,11 @@ export const setCurrencies = (currencies) => {
     currencies: currencies,
   };
 };
+export const setFavCurrencies = () => {
+  return {
+    type: actionTypes.SET_FAV_CURRENCIES,
+  };
+};
 
 export const initCurrenciesFail = (error) => {
   return {
@@ -51,7 +56,7 @@ export const currentItem = (obj) => {
 export const initCurrencies = () => {
   return (dispatch) => {
     dispatch(initCurrenciecStart());
-    fetch("http://api.nbp.pl/api/exchangerates/tables/c/?format=json")
+    fetch("https://api.nbp.pl/api/exchangerates/tables/c/?format=json")
       .then((res) => res.json())
       .then((res) => {
         dispatch(setCurrencies(res[0].rates));

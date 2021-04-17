@@ -9,6 +9,7 @@ import FavCurrencies from "./FavCurrencies/FavCurrencies";
 class Currencies extends Component {
   componentDidMount() {
     this.props.onInitCurrencies();
+    this.props.onSetFavCurrencies();
   }
 
   render() {
@@ -28,6 +29,7 @@ class Currencies extends Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     onInitCurrencies: () => dispatch(actions.initCurrencies()),
+    onSetFavCurrencies: () => dispatch(actions.setFavCurrencies()),
   };
 };
 

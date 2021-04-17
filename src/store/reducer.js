@@ -45,6 +45,7 @@ const addToFavorites = (state, action) => {
   if (index === -1) {
     favorites.push(action.favorites);
   }
+  localStorage.setItem("favorites", JSON.stringify(favorites));
   return {
     ...state,
     favorites: favorites,
@@ -52,6 +53,7 @@ const addToFavorites = (state, action) => {
 };
 
 const deleteAll = (state, action) => {
+  localStorage.setItem("favorites", "");
   return {
     ...state,
     favorites: [],
@@ -64,6 +66,7 @@ const removeCurrency = (state, action) => {
     updatedFavorites.findIndex((el) => el.code === action.code),
     1
   );
+  localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
   return {
     ...state,
     favorites: updatedFavorites,
@@ -75,6 +78,21 @@ const currentItem = (state, action) => {
   return {
     ...state,
     currentItem: action.obj,
+  };
+};
+
+const setFavCurrencies = (state, action) => {
+  let savedFavCurrencies;
+  const storage = localStorage.getItem("favorites");
+  if (storage) {
+    savedFavCurrencies = JSON.parse(storage);
+  } else {
+    savedFavCurrencies = [];
+  }
+
+  return {
+    ...state,
+    favorites: savedFavCurrencies,
   };
 };
 
@@ -94,6 +112,8 @@ const reducer = (state = initialState, action) => {
       return removeCurrency(state, action);
     case actionTypes.CURRENT_ITEM:
       return currentItem(state, action);
+    case actionTypes.SET_FAV_CURRENCIES:
+      return setFavCurrencies(state, action);
     default:
       return state;
   }
