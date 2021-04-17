@@ -34,6 +34,20 @@ export const deleteAll = () => {
   };
 };
 
+export const removeCurrency = (code) => {
+  return {
+    type: actionTypes.REMOVE_CURRENCY,
+    code: code,
+  };
+};
+
+export const currentItem = (obj) => {
+  return {
+    type: actionTypes.CURRENT_ITEM,
+    obj: obj,
+  };
+};
+
 export const initCurrencies = () => {
   return (dispatch) => {
     dispatch(initCurrenciecStart());

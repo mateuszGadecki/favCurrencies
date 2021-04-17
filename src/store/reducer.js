@@ -4,6 +4,7 @@ const initialState = {
   currencies: null,
   favorites: [],
   loading: false,
+  currentItem: [],
 };
 
 const initCurrenciecStart = (state, action) => {
@@ -59,6 +60,26 @@ const deleteAll = (state, action) => {
   };
 };
 
+const removeCurrency = (state, action) => {
+  const updatedFavorites = [...state.favorites];
+  updatedFavorites.splice(
+    updatedFavorites.findIndex((el) => el.code === action.code),
+    1
+  );
+  return {
+    ...state,
+    favorites: updatedFavorites,
+    currentItem: [],
+  };
+};
+
+const currentItem = (state, action) => {
+  return {
+    ...state,
+    currentItem: action.obj,
+  };
+};
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.INIT_CURRENCIES_START:
@@ -71,6 +92,10 @@ const reducer = (state = initialState, action) => {
       return addToFavorites(state, action);
     case actionTypes.DELETE_ALL:
       return deleteAll(state, action);
+    case actionTypes.REMOVE_CURRENCY:
+      return removeCurrency(state, action);
+    case actionTypes.CURRENT_ITEM:
+      return currentItem(state, action);
     default:
       return state;
   }

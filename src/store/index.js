@@ -1,1 +1,7 @@
-export { initCurrencies, addToFavorites, deleteAll } from "./actions";
+export {
+  initCurrencies,
+  addToFavorites,
+  deleteAll,
+  removeCurrency,
+  currentItem,
+} from "./actions";
