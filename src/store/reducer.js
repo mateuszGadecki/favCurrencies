@@ -44,8 +44,6 @@ const addToFavorites = (state, action) => {
   const index = favorites.findIndex((e) => e.code === action.favorites.code);
   if (index === -1) {
     favorites.push(action.favorites);
-  } else {
-    console.log("exists");
   }
   return {
     ...state,

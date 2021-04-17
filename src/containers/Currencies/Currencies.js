@@ -14,8 +14,12 @@ class Currencies extends Component {
   render() {
     return (
       <div className={classes.Currencies}>
-        <CurrenciesList />
-        <FavCurrencies />
+        <div className={classes.mobileBottom}>
+          <CurrenciesList />
+        </div>
+        <div className={classes.mobileTop}>
+          <FavCurrencies />
+        </div>
       </div>
     );
   }

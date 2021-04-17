@@ -13,11 +13,14 @@
 
 .currenciesItemWrapper li {
   font-size: 1.5rem;
+  display: flex;
+  align-items: center;
 }
 
 .center {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .followButton {
@@ -35,4 +38,13 @@
 .followButton:active {
   transform: scale(1.1);
   color: #436a10;
+}
+
+@media (max-width: 425px) {
+  .currenciesItemWrapper li {
+    font-size: 1.2rem;
+  }
+  .followButton {
+    font-size: 1.2rem;
+  }
 }

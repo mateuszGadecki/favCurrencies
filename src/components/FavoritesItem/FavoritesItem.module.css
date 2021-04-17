@@ -18,6 +18,7 @@
 .center {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .removeButton {
@@ -35,4 +36,21 @@
 .removeButton:active {
   transform: scale(1.1);
   color: #941d1e;
+}
+
+@media (max-width: 840px) {
+  .favItemWrapper {
+    grid-template-columns: 20% 22.5% 22.5% 22.5% 12.5%;
+  }
+}
+@media (max-width: 425px) {
+  .favItemWrapper {
+    grid-template-columns: 25% 21.25% 21.25% 21.25% 11.25%;
+  }
+  .favItemWrapper li {
+    font-size: 1.2rem;
+  }
+  .removeButton {
+    font-size: 1.2rem;
+  }
 }

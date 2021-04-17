@@ -32,13 +32,12 @@ class CurrenciesList extends Component {
         );
       }
     }
-    console.log(this.props.currencies);
     return (
       <div className={classes.currenciesList}>
         <h1>Kursy walut</h1>
         <div className={classes.listTitles}>
-          <h2>Waluta</h2>
-          <h2 className={classes.center}>Kurs średni</h2>
+          <h2 className={classes.currency}>Waluta</h2>
+          <h2>Kurs średni</h2>
         </div>
         {listContent}
       </div>

@@ -7,3 +7,16 @@
   grid-template-columns: 50% 50%;
   padding-bottom: 60px;
 }
+
+@media (max-width: 768px) {
+  .Currencies {
+    display: flex;
+    flex-direction: column;
+  }
+  .mobileBottom {
+    order: 2;
+  }
+  .mobileTop {
+    order: 1;
+  }
+}
