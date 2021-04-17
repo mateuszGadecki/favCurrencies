@@ -41,12 +41,21 @@ class FavCurrencies extends Component {
     removingOneMessage = `Czy na pewno chcesz usunąć walutę: ${this.props.currentItem.currency} z ulubionych?`;
     if (this.props.favorites.length > 0) {
       popup = (
-        <Popup
-          popupMessage={removingOneMessage}
-          show={this.state.removeCurrency}
-          closePopup={this.closePopupHandler}
-          confirmHandler={this.confirmRemovnigOne}
-        />
+        <div>
+          <div className={classes.listTitles}>
+            <h2 className={classes.currency}>Waluta</h2>
+            <h2>Kupno</h2>
+            <h2>Sprzedaż</h2>
+            <h2>Średni</h2>
+            <h2>Usuń</h2>
+          </div>
+          <Popup
+            popupMessage={removingOneMessage}
+            show={this.state.removeCurrency}
+            closePopup={this.closePopupHandler}
+            confirmHandler={this.confirmRemovnigOne}
+          />
+        </div>
       );
       favoritesItem = this.props.favorites.map((el) => {
         return (
@@ -78,15 +87,9 @@ class FavCurrencies extends Component {
 
     return (
       <div className={classes.favList}>
-        <div className={classes.listTitles}>
-          <h2 className={classes.currency}>Waluta</h2>
-          <h2>Kupno</h2>
-          <h2>Sprzedaż</h2>
-          <h2>Średni</h2>
-          <h2>Usuń</h2>
-        </div>
-        {favoritesItem}
+        <h1>Ulubione</h1>
         {popup}
+        {favoritesItem}
         <Popup
           popupMessage={removingAllMessage}
           show={this.state.removeAll}
