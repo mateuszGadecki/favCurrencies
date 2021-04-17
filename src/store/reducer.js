@@ -52,6 +52,13 @@ const addToFavorites = (state, action) => {
   };
 };
 
+const deleteAll = (state, action) => {
+  return {
+    ...state,
+    favorites: [],
+  };
+};
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.INIT_CURRENCIES_START:
@@ -62,6 +69,8 @@ const reducer = (state = initialState, action) => {
       return initCurrenciesFail(state, action);
     case actionTypes.ADD_TO_FAVORITES:
       return addToFavorites(state, action);
+    case actionTypes.DELETE_ALL:
+      return deleteAll(state, action);
     default:
       return state;
   }
