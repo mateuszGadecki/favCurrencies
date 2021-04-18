@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:900");
 .wrapper {
   animation: sliding-background 40s linear infinite;
-  background: url("../../assets/images/coins.jpg") no-repeat left / 120%;
+  background: url("../../assets/images/coins-min.jpg") no-repeat left / 120%;
   height: 180px;
   text-align: center;
   width: 100%;
