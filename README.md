@@ -23,6 +23,7 @@ Once the dependencies are installed, you can run `npm start` to start the applic
 - Browse the exchange rates
 - Add currency to favorites
 - Delete currency or all at once after confirming the pop-up
+- Storing favorite currencies in the local storage so that after reloading the pages they are still visible
 
 ---
 
